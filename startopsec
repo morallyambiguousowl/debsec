@@ -1,0 +1,8 @@
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get clean
+sudo apt-get autoremove
+sudo aa-enforce /etc/apparmor.d/*
+sudo pvpn -f
+/etc/init.d/privoxy start
+sudo ufw enable
