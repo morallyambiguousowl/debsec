@@ -1,8 +1,15 @@
+sudo macchanger -r wlp1s0
+sudo macchanger -r enp0s25
 sudo apt-get update
+sudo apt-get upgrade -s
 sudo apt-get upgrade
+checkrestart
 sudo apt-get clean
 sudo apt-get autoremove
 sudo aa-enforce /etc/apparmor.d/*
 sudo pvpn -f
 /etc/init.d/privoxy start
 sudo ufw enable
+history -c
+history -w
+shred -u ~/.bash_history && touch ~/.bash_history
