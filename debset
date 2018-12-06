@@ -8,7 +8,10 @@ sudo apt install resolvconf
 sudo wget -O protonvpn-cli.sh https://raw.githubusercontent.com/ProtonVPN/protonvpn-cli/master/protonvpn-cli.sh                                                                                                             
 sudo chmod +x protonvpn-cli.sh                                                                                
 sudo protonvpn-cli -init                                                                                      
-                                                                                                              
+
+#sandbox - firejail
+sudo apt-get install firejail firetools
+
 #apparmor                                                                                                     
 sudo apt install apparmor apparmor-utils                                                                      
 sudo mkdir -p /etc/default/grub.d                                                                             
