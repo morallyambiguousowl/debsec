@@ -1,0 +1,38 @@
+#Debian 9 Client Setup
+#MinInstall
+
+#VPN                                                                                                          
+sudo apt-get install openvpn                                                                                  
+sudo apt-get install network-manager-openvpn-gnome                                                            
+sudo apt install resolvconf                                                                                   
+sudo wget -O protonvpn-cli.sh https://raw.githubusercontent.com/ProtonVPN/protonvpn-cli/master/protonvpn-cli.sh                                                                                                             
+sudo chmod +x protonvpn-cli.sh                                                                                
+sudo protonvpn-cli -init                                                                                      
+                                                                                                              
+#apparmor                                                                                                     
+sudo apt install apparmor apparmor-utils                                                                      
+sudo mkdir -p /etc/default/grub.d                                                                             
+echo 'GRUB_CMDLINE_LINUX_DEFAULT="$GRUB_CMDLINE_LINUX_DEFAULT apparmor=1 security=apparmor"' \
+  | sudo tee /etc/default/grub.d/apparmor.cfg
+sudo update-grub
+sudo aa-status
+sudo aa-enforce /etc/apparmor.d/*
+
+#opensnitch - Have only been able to make this work on Ubuntu
+#sudo apt-get install protobuf-compiler libpcap-dev libnetfilter-queue-dev python3-pip
+#go get github.com/golang/protobuf/protoc-gen-go
+#go get -u github.com/golang/dep/cmd/dep
+#python3 -m pip install --user grpcio-tools
+#sudo apt-get install golang-go
+
+#ufw firewall bc fuck opensnitch
+sudo apt-get install ufw
+
+#to fix freezing
+#sudo nano /etc/default/grub
+#GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_idle.max_cstate=1"
+#sudo update-grub
+#sudo reboot
+
+sudo nano /etc/default/bluetooth
+#BLUETOOTH_ENABLED=0
