@@ -12,6 +12,9 @@ sudo protonvpn-cli -init
 #sandbox - firejail
 sudo apt-get install firejail firetools
 
+#AV
+sudo apt install clamav clamav-unofficial-sigs clamtk -y
+
 #apparmor                                                                                                     
 sudo apt install apparmor apparmor-utils                                                                      
 sudo mkdir -p /etc/default/grub.d                                                                             
