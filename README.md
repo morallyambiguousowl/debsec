@@ -9,4 +9,6 @@ This script automates the process of installing:
 3. ufw(firewall)
 4. protonvpn
 5. privoxy
+6. firejail (sandbox)
+7. firetools (GUI for firejail)
 Additional: Disables bluetooth
