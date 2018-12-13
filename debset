@@ -9,6 +9,9 @@ sudo wget -O protonvpn-cli.sh https://raw.githubusercontent.com/ProtonVPN/proton
 sudo chmod +x protonvpn-cli.sh                                                                                
 sudo protonvpn-cli -init                                                                                      
 
+#MacChanger
+sudo apt-get install macchanger
+
 #sandbox - firejail
 sudo apt-get install firejail firetools
 
@@ -31,8 +34,18 @@ sudo aa-enforce /etc/apparmor.d/*
 #python3 -m pip install --user grpcio-tools
 #sudo apt-get install golang-go
 
-#ufw firewall bc fuck opensnitch
+#ufw
 sudo apt-get install ufw
+
+#Signal (optional)
+#curl -s https://updates.signal.org/desktop/apt/keys.asc | sudo apt-key add -
+#echo "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main" | sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
+#sudo apt update && sudo apt install signal-desktop
+
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get autoremove
+sudo apt-get clean
 
 #to fix freezing
 #sudo nano /etc/default/grub
