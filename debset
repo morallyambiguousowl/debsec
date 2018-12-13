@@ -19,7 +19,7 @@ sudo apt-get install firejail firetools
 sudo apt install clamav clamav-unofficial-sigs clamtk -y
 
 #apparmor                                                                                                     
-sudo apt install apparmor apparmor-utils                                                                      
+sudo apt install apparmor apparmor-utils apparmor-profiles-extra                                                                   
 sudo mkdir -p /etc/default/grub.d                                                                             
 echo 'GRUB_CMDLINE_LINUX_DEFAULT="$GRUB_CMDLINE_LINUX_DEFAULT apparmor=1 security=apparmor"' \
   | sudo tee /etc/default/grub.d/apparmor.cfg
