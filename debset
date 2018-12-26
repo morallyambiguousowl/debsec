@@ -18,6 +18,9 @@ sudo apt-get install firejail firetools
 #AV
 sudo apt install clamav clamav-unofficial-sigs clamtk -y
 
+#Rootkit Checker
+sudo apt-get install rkhunter
+
 #apparmor                                                                                                     
 sudo apt install apparmor apparmor-utils apparmor-profiles-extra                                                                   
 sudo mkdir -p /etc/default/grub.d                                                                             
