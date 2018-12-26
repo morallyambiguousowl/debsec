@@ -10,6 +10,8 @@ sudo pvpn -f
 sudo /etc/init.d/privoxy start
 sudo aa-enforce /etc/apparmor.d/*
 sudo ufw enable
+sudo freshclam
+clamscan -irl clam.log /
 history -c
 history -w
 shred -u ~/.bash_history && touch ~/.bash_history
