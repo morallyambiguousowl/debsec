@@ -1,6 +1,9 @@
 #Debian 9 Client Setup
 #MinInstall
 
+#Prioritize Security Upgrades
+sudo unattended-upgrades
+
 #VPN                                                                                                          
 sudo apt-get install openvpn                                                                                  
 sudo apt-get install network-manager-openvpn-gnome                                                            
