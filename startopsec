@@ -1,18 +1,18 @@
-sudo macchanger -r wlp1s0
-sudo macchanger -r enp0s25
-sudo apt-get update
-sudo apt-get upgrade -s
-sudo apt-get upgrade
+macchanger -r wlp1s0
+macchanger -r enp0s25
+apt-get update
+apt-get upgrade -s
+apt-get upgrade
 checkrestart
-sudo apt-get clean
-sudo apt-get autoremove
-sudo pvpn -f
-sudo /etc/init.d/privoxy start
-sudo aa-enforce /etc/apparmor.d/*
-sudo ufw enable
-sudo freshclam
+apt-get clean
+apt-get autoremove
+pvpn -f
+/etc/init.d/privoxy start
+aa-enforce /etc/apparmor.d/*
+ufw enable
+freshclam
 clamscan -irl clam.log /
 history -c
 history -w
 shred -u ~/.bash_history && touch ~/.bash_history
-sudo rkhunter --check
+rkhunter --check
