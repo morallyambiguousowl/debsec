@@ -6,10 +6,11 @@ sudo apt-get upgrade
 checkrestart
 sudo apt-get clean
 sudo apt-get autoremove
-sudo aa-enforce /etc/apparmor.d/*
 sudo pvpn -f
-/etc/init.d/privoxy start
+sudo /etc/init.d/privoxy start
+sudo aa-enforce /etc/apparmor.d/*
 sudo ufw enable
 history -c
 history -w
 shred -u ~/.bash_history && touch ~/.bash_history
+sudo rkhunter --check
