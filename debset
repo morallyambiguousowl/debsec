@@ -48,6 +48,11 @@ sudo apt-get install ufw
 #echo "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main" | sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
 #sudo apt update && sudo apt install signal-desktop
 
+#ARP Handling Inspection
+sudo apt-get install arpon
+sudo systemctl enable arpon
+sudo systemctl restart arpon
+
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get autoremove
