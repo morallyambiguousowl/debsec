@@ -11,4 +11,5 @@ This script automates the process of installing:
 5. privoxy
 6. firejail (sandbox)
 7. firetools (GUI for firejail)
-Additional: Disables bluetooth
+8. Arpon (ARP Handling Inspection)
+9. rkhunter (rootkit check)
