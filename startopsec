@@ -3,16 +3,15 @@ macchanger -r enp0s25
 apt-get update
 apt-get upgrade -s
 apt-get upgrade
-checkrestart
 apt-get clean
 apt-get autoremove
 pvpn -f
 /etc/init.d/privoxy start
 aa-enforce /etc/apparmor.d/*
 ufw enable
-freshclam
 clamscan -irl clam.log /
 history -c
 history -w
 shred -u ~/.bash_history && touch ~/.bash_history
+sudo systemctl enable arpon
 rkhunter --check
