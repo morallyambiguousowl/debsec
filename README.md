@@ -13,3 +13,4 @@ This script automates the process of installing:
 7. firetools (GUI for firejail)
 8. Arpon (ARP Handling Inspection)
 9. rkhunter (rootkit check)
+10. SublimeText3
