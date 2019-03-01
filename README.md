@@ -16,4 +16,5 @@ This script automates the process of installing:
 10. SublimeText3
 
 Place ssh_config in the /etc/ssh/ directory (Following STIGs)
+
 Place sysctl.conf in the /etc/ directory for kernel hardening
