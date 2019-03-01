@@ -4,6 +4,9 @@
 #Prioritize Security Upgrades
 sudo unattended-upgrades
 
+#Set pass to single user mode
+grub-mkpasswd-pbkdf2
+
 #VPN                                                                                                          
 sudo apt-get install openvpn                                                                                  
 sudo apt-get install network-manager-openvpn-gnome                                                            
