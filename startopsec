@@ -1,17 +1,29 @@
-macchanger -r wlp1s0
-macchanger -r enp0s25
+#Change Mac address
+#macchanger -r <youradapter> -- Preferred option is set to automatically change on every boot --
+
+#System Upgrades
 apt-get update
 apt-get upgrade -s
 apt-get upgrade
 apt-get clean
 apt-get autoremove
+
+#Start vpn
 pvpn -f
+
+#Start proxy
 /etc/init.d/privoxy start
+
+#Set apparmor profiles to enforce
 aa-enforce /etc/apparmor.d/*
+
+#Verify firewall is on
 ufw enable
-clamscan -irl clam.log /
+
+#Clear bash history
 history -c
 history -w
 shred -u ~/.bash_history && touch ~/.bash_history
+
+#Enable ARP poisoning protection
 sudo systemctl enable arpon
-rkhunter --check
