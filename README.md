@@ -1,8 +1,8 @@
 # debsec
 startopsec is a script to run on login. 
-This checks for security updates, upgrades, cleans, starts ProtonVPN, Privoxy, apparmor, ufw, shreds the clipboard, clears previously ran terminal commands. 
+systemscan can be easily deduced.
 
-debset is a script in progress for the initial setup of Debian 9.
+debset is a script in progress for the initial setup of Ubuntu/Debian.
 This script automates the process of installing:
 1. apparmor
 2. GNU MAC Changer
@@ -15,6 +15,5 @@ This script automates the process of installing:
 9. rkhunter (rootkit check)
 10. SublimeText3
 
-Place ssh_config in the /etc/ssh/ directory (Following STIGs)
-
+Place sshd_config in the /etc/ssh/ directory (Following STIGs)
 Place sysctl.conf in the /etc/ directory for kernel hardening
