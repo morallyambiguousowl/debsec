@@ -1,4 +1,4 @@
-#Debian 9 Client Setup
+#Debian/Ubuntu Client Setup
 #MinInstall
 
 #Prioritize Security Upgrades
@@ -63,7 +63,10 @@ sudo apt-get clean
 
 #sudo wget https://launchpad.net/veracrypt/trunk/1.23/+download/veracrypt-1.23-setup.tar.bz2
 
-#Install StandardNotes
+#Install GNUPrivacy for PGP
+sudo apt-get install gpa
+#gpg --full-generate-key
+
 
 #Install SublimeText
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
@@ -71,5 +74,4 @@ echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sou
 sudo apt-get update
 sudo apt-get install sublime-text
 
-#sudo nano /etc/default/bluetooth
-#BLUETOOTH_ENABLED=0
+
