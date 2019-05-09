@@ -1,6 +1,6 @@
 # debsec
-startopsec is a script to run on login. 
-systemscan can be easily deduced.
+script is a script to run on login. 
+systemscan runs clamav & rkhunter.
 
 debset is a script in progress for the initial setup of Ubuntu/Debian.
 This script automates the process of installing:
@@ -15,5 +15,5 @@ This script automates the process of installing:
 9. rkhunter (rootkit check)
 10. GNU Privacy Assistant (PGP)
 
-Place sshd_config in the /etc/ssh/ directory (Following STIGs)
+Place ssh_config in the /etc/ssh/ directory (Following STIGs)
 Place sysctl.conf in the /etc/ directory for kernel hardening
