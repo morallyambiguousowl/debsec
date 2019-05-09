@@ -1,0 +1,73 @@
+#!/bin/bash
+
+function update() {
+	sudo apt-get update -y
+	sudo apt-get upgrade -y
+	sudo apt-get autoclean
+	sudo apt-get autoremove -y
+}
+
+function vpn() {
+	sudo pvpn -d && sudo pvpn -sc
+}
+
+function spoofmac() {
+	echo -e -n "$BLUE[$GREEN*$BLUE] Disabling interfaces\n"
+	sudo ifconfig wlan0 down
+	sudo ifconfig eth0 down
+	echo -e -n "$BLUE[$GREEN*$BLUE] Changing MAC\n"
+	sudo macchanger -r wlan0
+	echo -e -n "$BLUE[$GREEN*$BLUE] Reenabling wlan0\n"
+	sudo ifconfig wlan0 up
+}
+
+function clearbash() {
+	echo -e -n "$BLUE[$GREEN*$BLUE] Clearing bash history\n"
+	history -c
+	history -w
+	shred -u ~/.bash_history && touch ~/.bash_history
+	echo -e -n "$BLUE[$GREEN*$BLUE] bash history cleared\n"
+}
+
+function clean() {
+	echo -e -n "$BLUE[$GREEN*$BLUE] killing dangerous applications\n"
+	sudo killall -q chrome dropbox iceweasel skype icedove thunderbird firefox firefox-esr chromium xchat hexchat transmission steam firejail
+	echo -e -n "$BLUE[$GREEN*$BLUE] Dangerous applications killed\n"
+	echo -e -n "$BLUE[$GREEN*$BLUE] cleaning some dangerous cache elements\n"
+	bleachbit -c adobe_reader.cache chromium.cache chromium.current_session chromium.history elinks.history emesene.cache epiphany.cache firefox.url_history flash.cache flash.cookies google_chrome.cache google_chrome.history  links2.history opera.cache opera.search_history opera.url_history &> /dev/null
+	echo -e -n "$BLUE[$GREEN*$BLUE] Cache cleaned\n"
+}
+
+Big='Choose a decision: '
+options=("Update" "VPN" "Spoofmac" "ClearBash" "Clean" "all" "Quit")
+select opt in "${options[@]}"
+do
+    case $opt in
+        "Update")
+            update
+            ;;
+		"VPN")
+            vpn
+            ;;
+		"Spoofmac")
+			spoofmac
+			;;
+		"ClearBash")
+            clearbash
+            ;;
+		"Clean")
+			clean
+			;;
+		"all")
+			spoofmac
+			vpn
+			update
+			clearbash
+			clean
+			;;
+        "Quit")
+            break
+            ;;
+        *) echo "invalid option $REPLY";;
+    esac
+done
