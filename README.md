@@ -13,7 +13,7 @@ This script automates the process of installing:
 7. firetools (GUI for firejail)
 8. Arpon (ARP Handling Inspection)
 9. rkhunter (rootkit check)
-10. SublimeText3
+10. GNU Privacy Assistant (PGP)
 
 Place sshd_config in the /etc/ssh/ directory (Following STIGs)
 Place sysctl.conf in the /etc/ directory for kernel hardening
