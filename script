@@ -38,7 +38,6 @@ function clean() {
 	echo -e -n "$BLUE[$GREEN*$BLUE] Cache cleaned\n"
 }
 
-Big='Choose a decision: '
 options=("Update" "VPN" "Spoofmac" "ClearBash" "Clean" "all" "Quit")
 select opt in "${options[@]}"
 do
