@@ -1,2 +1,0 @@
-rkhunter --check
-clamscan -irl clam.log /
