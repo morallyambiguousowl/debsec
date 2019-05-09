@@ -38,9 +38,15 @@ function clean() {
 	echo -e -n "$BLUE[$GREEN*$BLUE] Cache cleaned\n"
 }
 
-options=("Update" "VPN" "Spoofmac" "ClearBash" "Clean" "all" "Quit")
+function scan() {
+	sudo rkhunter --check
+	sudo clamscan -irl clam.log /
+}
+
+options=("Update" "VPN" "Spoofmac" "ClearBash" "Clean" "Scan" "all" "Quit")
 select opt in "${options[@]}"
 do
+
     case $opt in
         "Update")
             update
@@ -57,12 +63,16 @@ do
 		"Clean")
 			clean
 			;;
+		"Scan")
+			scan
+			;;
 		"all")
 			spoofmac
 			vpn
 			update
 			clearbash
 			clean
+			scan
 			;;
         "Quit")
             break
